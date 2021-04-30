@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import EmployeeCard from './components/EmployeeCard';
+import Wrapper from './components/Wrapper';
 
 function App() {
   return (
