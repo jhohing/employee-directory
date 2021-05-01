@@ -3,7 +3,7 @@ const url = 'https://randomuser.me/';
 
 //api call
 export default {
-    ApiSearch: function () {
+    getEmployees: function () {
         return axios.get(url)
 
     }
