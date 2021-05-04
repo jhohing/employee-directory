@@ -23,27 +23,24 @@ class EmployeesContainer extends Component {
     API.getEmployees()
       .then((res) =>
         this.setState({
-          employees: res.data.results,
-          filteredEmployees: res.data.results,
+          employees: res.data.results
         })
       )
       .catch((err) => console.log(err));
   }
 
   // Sort with the key of specified object.
-  // If key has children, sort by primary child and optionally a secondary child. i.e. sort by last name, then first.
   sortBy = (key, primary = 0, secondary = 0) => {
-    let sortedEmployees = this.state.filteredEmployees;
+    let sortedEmployees = this.state.employees;
     if (this.state.sortDirections[key]) {
       this.setState({
-        filteredEmployees: sortedEmployees.reverse(),
         sortDirections: {
           ...this.initialSortDirections,
           [key]: this.state.sortDirections[key] === "asc" ? "desc" : "asc",
         },
       });
     } else {
-      sortedEmployees = this.state.filteredEmployees.sort((a, b) => {
+      sortedEmployees = this.state.employees.sort((a, b) => {
         a = a[key];
         b = b[key];
 
@@ -60,7 +57,6 @@ class EmployeesContainer extends Component {
       });
 
       this.setState({
-        filteredEmployees: sortedEmployees,
         sortDirections: {
           ...this.initialSortDirections,
           [key]: "asc",
@@ -87,6 +83,7 @@ class EmployeesContainer extends Component {
           <EmployeeTable
             state={this.state}
             sortBy={this.sortBy}
+            employees={this.employees}
             formatDate={this.formatDate}
           />
         </div>
