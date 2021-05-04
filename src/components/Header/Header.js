@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <h1 className="text-center">Employee Directory</h1>
       <p className="text-center">
-        Click on column headers to filter by heading
+        Click on column headers to sort by heading
       </p>
     </header>
   );

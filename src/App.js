@@ -1,14 +1,15 @@
 import React from 'react';
+import "./App.css";
 import Header from "./components/Header";
-import EmployeeTable from './components/EmployeeTable';
+import EmployeesContainer from './components/EmployeesContainer';
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <EmployeeTable/>
-    </div>
+    <>
+      <Header />
+      <EmployeesContainer />
+    </>
   );
-}
+};
 
 export default App;
