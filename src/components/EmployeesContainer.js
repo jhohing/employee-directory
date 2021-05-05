@@ -34,6 +34,7 @@ class EmployeesContainer extends Component {
     let sortedEmployees = this.state.employees;
     if (this.state.sortDirections[key]) {
       this.setState({
+        employees: sortedEmployees.reverse(),  
         sortDirections: {
           ...this.initialSortDirections,
           [key]: this.state.sortDirections[key] === "asc" ? "desc" : "asc",
@@ -57,6 +58,7 @@ class EmployeesContainer extends Component {
       });
 
       this.setState({
+        employees: sortedEmployees,
         sortDirections: {
           ...this.initialSortDirections,
           [key]: "asc",

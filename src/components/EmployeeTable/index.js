@@ -34,7 +34,7 @@ function EmployeeTable(props) {
 
           return (
             <tr key={employee.login.uuid}>
-              <td>
+              <td className="align-middle">
                 <img src={employee.picture.thumbnail} alt={fullName} />
               </td>
               <td className="align-middle">{fullName}</td>
